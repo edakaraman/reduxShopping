@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { removeCard } from "../redux/actions/card";
 
 const Card = () => {
-  //dispatch : Action’ı parametre alarak reducer’ı tetikler. Bunun sonucunda state değiştirilir
+  //dispatch : Triggers the reducer by taking Action as a parameter. As a result, the situation changes.
   const dispatch = useDispatch();
   const {cardItems} = useSelector(state => state.card);
   console.log(cardItems);

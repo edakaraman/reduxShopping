@@ -4,12 +4,14 @@ import { productsActionDetail } from '../redux/actions/products';
 import { useDispatch, useSelector } from 'react-redux';
 import {CgMathMinus,CgMathPlus} from 'react-icons/cg';
 import { productsCard } from '../redux/actions/card';
+
  const Detail = () => {
-  const {id} = useParams();
-  const dispatch = useDispatch();
-  const {product} = useSelector((state) => state.product);
-  const [count,setCount] = useState(0)
-  useEffect(() =>{
+   const {id} = useParams();
+   const dispatch = useDispatch();
+   const {product} = useSelector((state) => state.product);
+   const [count,setCount] = useState(0)
+
+   useEffect(() =>{
     dispatch(productsActionDetail(id))
   },[dispatch])
   
@@ -25,7 +27,7 @@ import { productsCard } from '../redux/actions/card';
   }
   const addCard = () => {
     dispatch(productsCard(id,count))
-    //sepete ürün eklenince sepet bölümü açılacak
+    // when the product is added to the cart, the cart section will be opened
     dispatch({type:'DRAWER',payload:true})
 
   }
